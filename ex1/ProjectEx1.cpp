@@ -62,7 +62,7 @@ private:
     Planet plt;
     double pi;
 public:
-    Sun(double x, char& ch):CelestialBody(x, "SKY"), plt(ch){ pi = 3.14;}
+    Sun(double x, char& ch): CelestialBody(x, "SKY"), plt(ch){ pi = 3.14;}
     static int getN() { return n;}
     void print();
 };
