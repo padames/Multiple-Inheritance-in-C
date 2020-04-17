@@ -80,7 +80,7 @@ int main()
     Sun sun(39, c);
     
     sun.print();
-    
+
     return 0;
 }
 
