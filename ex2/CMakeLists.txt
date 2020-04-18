@@ -6,6 +6,6 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 include_directories(./cmake-build-debug)
 
-set(SOURCE_FILES main.cpp Point.cpp Shape.cpp Square.cpp Square.h)
+set(SOURCE_FILES main.cpp Point.cpp Shape.cpp Square.cpp Square.h Rectangle.cpp Rectangle.h GraphicsWorld.cpp GraphicsWorld.h)
 add_executable(ex2
         ${SOURCE_FILES})

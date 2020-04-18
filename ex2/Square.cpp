@@ -9,7 +9,8 @@ namespace shape {
     /**
      * Constructor initializing class members
      */
-    Square::Square(char * name, Point & origin, double side): side_a_(side), Shape(name,origin) {}
+    Square::Square(double x, double y, double sideA, const char* name)
+        : side_a_(sideA), Shape(*(new Point(x,y)), name) {}
 
     /**
      * computes the area of a square object
@@ -49,6 +50,7 @@ namespace shape {
      *      Y-coordinate: <y-value>
      */
     void Square::display() {
+        cout << endl;
         cout << "Square Name: " << getName() << endl;
         getOrigin().display();
     }

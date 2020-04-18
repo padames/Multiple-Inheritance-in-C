@@ -32,15 +32,24 @@ namespace shape {
     /**
      * dynamically allocates a name and an origin
      */
-    Shape::Shape(char* name, Point& origin) {
+    Shape::Shape(Point& origin, const char* name) {
         setName(name);
         origin_ = origin;
     }
 
     /**
+     * dynamically allocates a name and an origin
+     */
+    Shape::Shape(double x, double y, const char* name) {
+        setName(name);
+        origin_ = Point(x, y);
+    }
+
+
+    /**
      * dynamilcally allocates the memory for the name of the shape object
      */
-    void Shape::setName(char *name) {
+    void Shape::setName(const char *name) {
         if (nullptr == name) {
             shapeName = new char[7];
             strcpy(shapeName, "noname");
@@ -56,13 +65,14 @@ namespace shape {
     */
     Shape::Shape(const Shape& other) {
         setName(other.getName());
-
+        origin_ = other.getOrigin();
     }
 
     /**
      * copy assignment operator
      */
-    Shape& Shape::operator=(Shape &other) {
+    Shape& Shape::operator=(const Shape &other) {
+        setName(other.getName());
         origin_ = other.getOrigin();
         return *this;
     }
@@ -73,6 +83,10 @@ namespace shape {
      * @return
      */
     Point Shape::getOrigin() {
+        return origin_;
+    }
+
+    Point Shape::getOrigin() const {
         return origin_;
     }
 
@@ -87,6 +101,7 @@ namespace shape {
      * shows on screen the shape's name ans its coordinates
      */
     void Shape::display() {
+        cout << endl;
         cout << "Shape Name: " << shapeName << endl;
         origin_.display();
     }

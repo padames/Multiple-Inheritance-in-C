@@ -22,9 +22,15 @@ namespace shape {
 
     public:
         /**
-         * dynamically allocates a name and an origin
+         * initializes the name and an origin from a point
          */
-        Shape(char*, Point&);
+        Shape(Point&, const char*);
+
+        /**
+         * initializes the name and an origin from coordinates
+         */
+        Shape(double x, double y, const char*);
+
 
         ~Shape();
 
@@ -36,12 +42,12 @@ namespace shape {
         /**
          * copy assignment operator
          */
-        Shape &operator=(Shape &other);
+        Shape &operator=(const Shape &other);
 
         /**
          * dynamilcally allocates the memory for the name of the shape object
          */
-        void setName(char *);
+        void setName(const char *);
 
         /**
          * returns the object containing the coordinates of the origin
@@ -49,6 +55,9 @@ namespace shape {
          * @return
          */
         Point getOrigin();
+
+
+        Point getOrigin() const;
 
         /**
          * returns the name of the shape object

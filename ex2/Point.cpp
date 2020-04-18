@@ -15,12 +15,18 @@ int Point::id_ = 0;
 
 Point::Point() { Point::id_++;}
 
-
 Point::~Point() { Point::id_--;}
 
 Point::Point(double x, double y) : x_(x), y_(y) {
     Point();
 }
+
+Point& Point::operator=(const Point& other) {
+    setX(other.getX());
+    setY((other.getY()));
+    return *this;
+}
+
 
 void Point::setCoordinates(double x, double y) {
     x_ = x;
@@ -68,6 +74,7 @@ ostream& Point::write (ostream& os) const {
 }
 
 void Point::display() {
+    cout << endl;
     cout << "X-coordinate: " << getX() << endl;
     cout << "Y-coordinate: " << getY() << endl;
 }

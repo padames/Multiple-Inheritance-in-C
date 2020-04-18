@@ -40,6 +40,8 @@ namespace shape {
          */
         Point(double, double);
 
+        Point& operator=(const Point& other);
+
         /**
          * convenience function to set both x and y coordinate values
          */

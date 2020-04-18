@@ -11,7 +11,7 @@ namespace shape {
     private:
         double side_a_;
     public:
-        Square(char*, Point&, double);
+        Square(double, double, double, const char*);
 
         /**
          * computes the area of a square object
