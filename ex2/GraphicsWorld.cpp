@@ -73,6 +73,18 @@ void GraphicsWorld::run() {
     rec2.display();
 
     cout << endl;
+    cout << "Testing distance functions between shapes" << endl;
+
+    cout << endl;
+    cout << "The distance between square s' and rectangle rec1' is: " << s.distance(rec1) << endl;
+
+    cout << endl;
+    cout << "The distance between square rec1' and rectangle b' is: " << rec1.distance(b) << endl;
+
+    cout << "The difference between the two distance functions on the same objects is: " << (rec1.distance(b) - Shape::distance(rec1, b) ) << endl;
+
+    
+    cout << endl;
     cout << "Testing functions in class circle" << endl;
 
 
