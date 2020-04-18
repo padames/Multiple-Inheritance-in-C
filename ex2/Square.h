@@ -8,9 +8,41 @@
 
 namespace shape {
     class Square : public Shape {
-        
+    private:
+        double side_a_;
+    public:
+        Square(char*, Point&, double);
 
+        /**
+         * computes the area of a square object
+         * @return calculated value for the surface area
+         */
+        double area();
 
+        /**
+         * computes de perimeter of a square object
+         * @return
+         */
+        double perimeter();
+
+        /**
+         * gives the side of the square
+         * @return
+         */
+        double getSide();
+
+        /**
+         * assigns a value to the side of the square
+         */
+        void setSide(double);
+
+        /**
+         * shows a text representation of the object:
+         *       Square Name: <name>
+         *      X-coordinate: <x-value>
+         *      Y-coordinate: <y-value>
+         */
+        void display();
     };
 
 }

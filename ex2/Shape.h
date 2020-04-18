@@ -7,14 +7,17 @@
 #include "Point.h"
 
 namespace shape {
-/**
- * base class for geometric shapes
- */
+    /**
+     * base class for geometric shapes
+     */
     class Shape {
     private:
         Point origin_;
         char *shapeName;
-
+        /**
+         * this blocks users of this class from using the default
+         * constructor
+         */
         Shape() {}
 
     public:
