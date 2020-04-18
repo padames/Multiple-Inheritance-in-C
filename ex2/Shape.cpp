@@ -88,8 +88,7 @@ namespace shape {
      */
     void Shape::display() {
         cout << "Shape Name: " << shapeName << endl;
-        cout << "X-coordinate: " << origin_.getX() << endl;
-        cout << "Y-coordinate: " << origin_.getY() << endl;
+        origin_.display();
     }
 
     /**

@@ -23,13 +23,13 @@ namespace shape {
          * computes de perimeter of a square object
          * @return
          */
-        double perimeter();
+        double perimeter() const;
 
         /**
          * gives the side of the square
          * @return
          */
-        double getSide();
+        double getSide() const;
 
         /**
          * assigns a value to the side of the square

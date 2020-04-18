@@ -9,9 +9,14 @@
 
 using namespace std;
 
+using namespace shape;
+
 int Point::id_ = 0;
 
-Point::Point() { id_++;}
+Point::Point() { Point::id_++;}
+
+
+Point::~Point() { Point::id_--;}
 
 Point::Point(double x, double y) : x_(x), y_(y) {
     Point();
@@ -60,4 +65,9 @@ double Point::distance(Point other) {
 ostream& Point::write (ostream& os) const {
     os << "(" << getX() << ", " << getY() << ")" << endl;
     return os;
+}
+
+void Point::display() {
+    cout << "X-coordinate: " << getX() << endl;
+    cout << "Y-coordinate: " << getY() << endl;
 }
