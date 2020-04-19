@@ -59,11 +59,11 @@ void Point::moveBy(double dx, double dy) {
 }
 
 
-double Point::distance(Point p1, Point p2) {
+double Point::distance(const Point& p1, const Point& p2) {
     return sqrt(p1.getX() * p2.getX() + p1.getY() * p2.getY());
 }
 
-double Point::distance(Point other) {
+double Point::distance(const Point& other) const {
     auto ss = x_ * other.getX() + y_ * other.getY();
     return sqrt(abs(ss));
 }

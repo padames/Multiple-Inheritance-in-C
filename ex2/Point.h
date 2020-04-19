@@ -73,7 +73,7 @@ namespace shape {
          * between any two given points
          * @return
          */
-        static double distance(Point, Point);
+        static double distance(const Point&, const Point&);
 
         /**
          * class function to compute Euclidean distance
@@ -81,7 +81,7 @@ namespace shape {
          * @return the distance on the Cartesian plane between this and
          * the other point
          */
-        double distance(Point);
+        double distance(const Point&) const;
 
         /**
          * the public function in charge of putting an inline representation

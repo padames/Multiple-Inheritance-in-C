@@ -51,7 +51,7 @@ namespace shape {
      */
     void Square::display() {
         cout << endl;
-        cout << "Square Name: " << getName() << endl;
+        cout << "Square Name: " << getName();
         getOrigin().display();
     }
 

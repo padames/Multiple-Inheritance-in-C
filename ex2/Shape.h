@@ -14,11 +14,6 @@ namespace shape {
     private:
         Point origin_;
         char *shapeName;
-        /**
-         * this blocks users of this class from using the default
-         * constructor
-         */
-        Shape() {}
 
     public:
         /**
@@ -74,14 +69,14 @@ namespace shape {
          * Shape object's origin.
          * @return
          */
-        double distance(Shape &);
+        double distance(const Shape &) const;
 
         /**
          * class function to compute Euclidean distance between two
          * given Shape objects' origins
          * @return
          */
-        static double distance(Shape &, Shape &);
+        static double distance(const Shape &, const Shape &);
 
         /**
          * moves the shape to new location by

@@ -34,3 +34,6 @@
 # CLion project
 .idea/
 cmake-build-debug/
+
+#additional folders
+ex2/VisualParadigm/

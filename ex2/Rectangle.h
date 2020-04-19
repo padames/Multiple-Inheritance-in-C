@@ -11,7 +11,7 @@ namespace shape {
     /**
      * The shape of a rectangle as a specialization of a Square type
      */
-    class Rectangle : public Square {
+    class Rectangle : public virtual Square {
     private:
         /**
          * the other side of pair of equal sides of a rectangle shape

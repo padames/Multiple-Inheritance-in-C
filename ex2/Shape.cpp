@@ -102,7 +102,7 @@ namespace shape {
      */
     void Shape::display() {
         cout << endl;
-        cout << "Shape Name: " << shapeName << endl;
+        cout << "Shape Name: " << shapeName;
         origin_.display();
     }
 
@@ -111,7 +111,7 @@ namespace shape {
      * Shape object's origin.
      * @return
      */
-    double Shape::distance(Shape &other) {
+    double Shape::distance(const Shape &other) const {
         return origin_.distance(other.getOrigin());
     }
 
@@ -120,7 +120,7 @@ namespace shape {
      * given Shape objects' origins
      * @return
      */
-    double Shape::distance(Shape &s1, Shape &s2) {
+    double Shape::distance(const Shape &s1, const Shape &s2) {
         return Point::distance(s1.getOrigin(), s2.getOrigin());
     }
 

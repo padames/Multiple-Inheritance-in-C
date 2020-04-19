@@ -5,7 +5,10 @@
 #include "GraphicsWorld.h"
 #include "Square.h"
 #include "Rectangle.h"
+#include "Circle.h"
+#include "CornerCut.h"
 
+using namespace std;
 using namespace shape;
 
 void GraphicsWorld::run() {
@@ -81,11 +84,37 @@ void GraphicsWorld::run() {
     cout << endl;
     cout << "The distance between square rec1' and rectangle b' is: " << rec1.distance(b) << endl;
 
-    cout << "The difference between the two distance functions on the same objects is: " << (rec1.distance(b) - Shape::distance(rec1, b) ) << endl;
+    cout << "The difference between the two distance functions on the same objects is: "
+         << (rec1.distance(b) - Shape::distance(rec1, b) ) << endl;
 
-    
     cout << endl;
     cout << "Testing functions in class circle" << endl;
 
+    Circle c(3, 5, 9, "CIRCLE C");
+    c.display();
+
+    cout << endl;
+    cout << "The area of " << c.getName() << " is: " << c.area() << endl;
+    cout << "The perimeter of " << c.getName() << " is: " << c.perimeter() << endl;
+
+    d = a.distance(c);
+
+    cout << "The distance between the rectangle a and the circle s is: " << d << endl;
+
+    cout << endl;
+    cout << "Testing functions of CornerCut" << endl;
+
+    CornerCut cc(5.5, 6.2, 10, 20, 5.4, "CORNERCUT CC");
+    cc.display();
+
+    d = cc.distance(c);
+
+    cout << endl;
+    cout << "The distance from the cornercut to the circle is: " << d << endl;
+
+    d = shape::Shape::distance(cc, c);
+
+    cout << endl;
+    cout << "The distance from the cornercut to the circle using the static class function distance is: " << d << endl;
 
 }

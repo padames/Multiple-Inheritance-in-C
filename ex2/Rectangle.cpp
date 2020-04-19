@@ -7,10 +7,10 @@
 
 namespace shape {
     /**
- * a constructor with full class member initialization
- */
+     * a constructor with full class member initialization
+     */
     Rectangle::Rectangle(double x, double y, double sideA, double sideB, const char * name)
-        : side_b_(sideB), Square(x, y, sideA, name) {}
+        : side_b_(sideB), Square(x, y, sideA, name), Shape(x, y, name) {}
 
     /**
      * computes the area of a rectangle object
@@ -87,7 +87,7 @@ namespace shape {
      */
     void Rectangle::display() {
         cout << endl;
-        cout << "Rectangle Name: " << getName() << endl;
+        cout << "Rectangle Name: " << getName();
         getOrigin().display();
     }
 }
