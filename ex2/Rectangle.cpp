@@ -13,11 +13,28 @@ namespace shape {
         : side_b_(sideB), Square(x, y, sideA, name), Shape(x, y, name) {}
 
     /**
+     * copy constructor
+     * @param other
+     */
+    Rectangle::Rectangle(const Rectangle& other)
+    : Square(other.getOrigin().getX(), other.getOrigin().getY(), other.getSide(), other.getName()),
+    Shape(other.getOrigin().getX(), other.getOrigin().getY(), other.getName()), side_b_(other.getSideB()) {}
+
+    Rectangle& Rectangle::operator=(const Rectangle &other) {
+        setName(other.getName());
+        setOrigin(other.getOrigin());
+        setSideA(other.getSideA());
+        setSideB(other.getSideB());
+        return *this;
+    }
+
+
+    /**
      * computes the area of a rectangle object
      * @return the value of the area in the units of the lengths of
      * the sides squared
      */
-    double Rectangle::area() {
+    double Rectangle::area() const {
         return getSideA() * getSideB();
     }
 
@@ -26,7 +43,7 @@ namespace shape {
      * a rectangle object.
      * @return the value of the area of the rectangle
      */
-    double Rectangle::perimeter() {
+    double Rectangle::perimeter() const {
         return 2.0 * ( getSideA() + getSideB() );
     }
 
@@ -35,7 +52,7 @@ namespace shape {
      * the instance of rectangle, or any of them if they are equal length.
      * @return the length of the shortest side
      */
-    double Rectangle::getShortSide() {
+    double Rectangle::getShortSide() const{
         return (getSideA() > getSideB())? getSideB(): getSideA();
     }
 
@@ -45,7 +62,7 @@ namespace shape {
      * equal in length.
      * @return the length of the longest side
      */
-    double Rectangle::getLongSide() {
+    double Rectangle::getLongSide() const {
         return (getSideA() > getSideB())? getSideA(): getSideB();
     }
 
@@ -53,7 +70,7 @@ namespace shape {
      * the a-side is the first length assigned to a rectangle in the constructor
      * @return the length of the a-side
      */
-    double Rectangle::getSideA() {
+    double Rectangle::getSideA() const{
         return Square::getSide();
     }
 
@@ -61,7 +78,7 @@ namespace shape {
      * * the b-side is the second length assigned to a rectangle in the constructor
      * @return the length of the b-side
      */
-    double Rectangle::getSideB() {
+    double Rectangle::getSideB() const{
         return side_b_;
     }
 
@@ -85,7 +102,7 @@ namespace shape {
      *      X-coordinate: <x-value>
      *      Y-coordinate: <y-value>
      */
-    void Rectangle::display() {
+    void Rectangle::display() const {
         cout << endl;
         cout << "Rectangle Name: " << getName();
         getOrigin().display();

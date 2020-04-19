@@ -22,22 +22,33 @@ namespace shape{
         Circle(double, double, double, const char *);
 
         /**
+         * copy constructor
+         */
+        Circle(const Circle&);
+
+        /**
+         * assignment operator
+         * @return a ref to a new circle object copied from the argument object
+         */
+        Circle& operator=(const Circle&);
+
+        /**
          * compute the area of an instance of a circle
          * @return the value computed for its area in length units squared
          */
-        double area();
+        double area() const;
 
         /**
          * compute the permimeter of an instance of a circle shape
          * @return the value of the perimeter, the length of the circumference
          */
-        double perimeter();
+        double perimeter() const;
 
         /**
          * return the radius of the instance of a circle
          * @return the value of the radius in units of length
          */
-        double getRadius();
+        double getRadius() const;
 
         /**
          * assign a value to the radius of this instance of a circle object
@@ -50,7 +61,7 @@ namespace shape{
          *      X-coordinate: <x-value>
          *      Y-coordinate: <y-value>
          */
-        void display();
+        void display() const;
 
     };
 }

@@ -19,10 +19,32 @@ CornerCut::CornerCut(double x, double y, double width, double length, double rad
 }
 
 /**
+ * a copy constructor
+ */
+CornerCut::CornerCut(const CornerCut& other)
+    : Square(other.getOrigin().getX(), other.getOrigin().getY(), other.getSideA(), other.getName()),
+    Rectangle(other.getOrigin().getX(), other.getOrigin().getY(), other.getSideA(), other.getSideB(), other.getName()),
+    Circle(other.getOrigin().getX(), other.getOrigin().getY(), other.getRadius(), other.getName()),
+    Shape(other.getOrigin().getX(), other.getOrigin().getY(), other.getName()) {}
+
+/**
+ * copy assignment operator
+ */
+CornerCut& CornerCut::operator=(const CornerCut &other) {
+    setOrigin(other.getOrigin());
+    setRadius(other.getRadius());
+    setSide(other.getSide());
+    setSideB(other.getSideB());
+    setName(other.getName());
+    return *this;
+}
+
+
+/**
  * computes the area of an instance of a corner cut rectangle
  * @return the value of the area in units of length squared
  */
-double CornerCut::area() {
+double CornerCut::area() const {
     return Rectangle::area() - 0.25 * Circle::area();
 }
 
@@ -30,7 +52,7 @@ double CornerCut::area() {
  * computes the perimeter of the instance of the corner cut rectangle
  * @return the value of the perimeter in units of length
  */
-double CornerCut::perimeter() {
+double CornerCut::perimeter() const {
     return Rectangle::perimeter() - 2.0 * getRadius();
 }
 
@@ -43,7 +65,7 @@ double CornerCut::perimeter() {
  *      Length:
  *      Radius of the cut:
  */
-void CornerCut::display() {
+void CornerCut::display() const {
     cout << endl;
     cout << "CornerCut Name: " << Rectangle::getName() << endl;
     Rectangle::getOrigin().display();

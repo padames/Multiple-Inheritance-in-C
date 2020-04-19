@@ -49,7 +49,7 @@ double Point::getY() const {
     return y_;
 }
 
-double Point::counter() {
+double Point::counter() const {
     return Point::id_;
 }
 
@@ -73,7 +73,7 @@ ostream& Point::write (ostream& os) const {
     return os;
 }
 
-void Point::display() {
+void Point::display() const {
     cout << endl;
     cout << "X-coordinate: " << getX() << endl;
     cout << "Y-coordinate: " << getY() << endl;

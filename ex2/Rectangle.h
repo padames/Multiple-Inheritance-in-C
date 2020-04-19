@@ -24,25 +24,37 @@ namespace shape {
         Rectangle(double, double, double, double, const char *);
 
         /**
+         * copy constructor
+         * @param other
+         */
+        Rectangle(const Rectangle& other);
+
+        /**
+         * assignment operator
+         * @return a reference to a copy of a Rectangle based on the argument
+         */
+        Rectangle& operator=(const Rectangle&);
+
+        /**
          * computes the area of a rectangle object
          * @return the value of the area in the units of the lengths of
          * the sides squared
          */
-        double area();
+        double area() const;
 
         /**
          * caomputes de length of the perimeter of an instance os
          * a rectangle object.
          * @return the value of the area of the rectangle
          */
-        double perimeter();
+        double perimeter() const;
 
         /**
          * gets the shorter of the two pairs of equal-length sides of
          * the instance of rectangle, or any of them if they are equal length.
          * @return the length of the shortest side
          */
-        double getShortSide();
+        double getShortSide() const;
 
         /**
          * gets the longer of the two pairs of equal-length sides of
@@ -50,19 +62,19 @@ namespace shape {
          * equal in length.
          * @return the length of the longest side
          */
-        double getLongSide();
+        double getLongSide() const;
 
         /**
          * the a-side is the first length assigned to a rectangle in the constructor
          * @return the length of the a-side
          */
-        double getSideA();
+        double getSideA() const;
 
         /**
          * * the b-side is the second length assigned to a rectangle in the constructor
          * @return the length of the b-side
          */
-        double getSideB();
+        double getSideB() const;
 
         /**
          * * the a-side is the first length assigned to a rectangle in the constructor
@@ -79,7 +91,8 @@ namespace shape {
          *    Rectangle Name: <name>
          *      X-coordinate: <x-value>
          *      Y-coordinate: <y-value>
-         */        void display();
+         */
+        void display() const;
     };
 
 }

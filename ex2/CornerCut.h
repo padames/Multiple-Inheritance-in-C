@@ -20,17 +20,29 @@ namespace shape {
          */
         CornerCut(double x, double y, double width, double height, double radius, const char *name);
 
-/**
+        /**
+         * a copy constructor
+         */
+        CornerCut(const CornerCut&);
+
+        /**
+         * An assignment constructor
+         * @param other
+         * @return
+         */
+        CornerCut& operator=(const CornerCut &other);
+
+        /**
          * computes the area of an instance of a corner cut rectangle
          * @return the value of the area in units of length squared
          */
-        double area();
+        double area() const;
 
         /**
          * computes the perimeter of the instance of the corner cut rectangle
          * @return the value of the perimeter in units of length
          */
-        double perimeter();
+        double perimeter() const;
 
         /**
          * shows a text representation of the object of type Corner Cut rectangle
@@ -41,7 +53,7 @@ namespace shape {
          *      Length:
          *      Radius of the cut:
          */
-        void display();
+        void display() const;
 
 
     };

@@ -60,7 +60,7 @@ namespace shape {
          * of this class
          * @return
          */
-        double counter();
+        double counter() const;
 
         /**
          * a function to compute translations by the given deltas
@@ -105,7 +105,7 @@ namespace shape {
         /**
          * prints a text representation to standard output
          */
-        void display();
+        void display() const;
     };
 
 } // namespace shape

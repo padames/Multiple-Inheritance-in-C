@@ -14,10 +14,21 @@ namespace shape {
         Square(double, double, double, const char*);
 
         /**
+         * copy constructor
+         */
+        Square( const Square&);
+
+        /**
+         * assignment operator
+         * @return a reference to a new Square object copied from the argument object
+         */
+        Square& operator=(const Square&);
+
+        /**
          * computes the area of a square object
          * @return calculated value for the surface area
          */
-        double area();
+        double area() const;
 
         /**
          * computes de perimeter of a square object

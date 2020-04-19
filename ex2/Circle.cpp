@@ -13,10 +13,28 @@ namespace shape {
         : radius_(radius), Shape(x, y, name) {}
 
     /**
+     * copy constructor
+     */
+    Circle::Circle(const Circle &other)
+        : Shape(other.getOrigin().getX(), other.getOrigin().getY(), other.getName()),
+        radius_(other.getRadius()) {}
+
+    /**
+     * assignment operator
+     * @return a ref to a new circle object copied from the argument object
+     */
+    Circle& Circle::operator=(const Circle &other) {
+        setName(other.getName());
+        setOrigin(other.getOrigin());
+        setRadius(other.getRadius());
+        return *this;
+    }
+
+    /**
      * compute the area of an instance of a circle
      * @return the value computed for its area in length units squared
      */
-    double Circle::area() {
+    double Circle::area() const {
         return M_PI * pow(getRadius(), 2.0);
     }
 
@@ -24,7 +42,7 @@ namespace shape {
      * compute the permimeter of an instance of a circle shape
      * @return the value of the perimeter, the length of the circumference
      */
-    double Circle::perimeter() {
+    double Circle::perimeter() const {
         return 2.0 * M_PI * getRadius();
     }
 
@@ -32,7 +50,7 @@ namespace shape {
      * return the radius of the instance of a circle
      * @return the value of the radius in units of length
      */
-    double Circle::getRadius() {
+    double Circle::getRadius() const {
         return radius_;
     }
 
@@ -49,7 +67,7 @@ namespace shape {
      *      X-coordinate: <x-value>
      *      Y-coordinate: <y-value>
      */
-    void Circle::display() {
+    void Circle::display() const{
         cout << endl;
         cout << "Circle Name: " << getName();
         getOrigin().display();

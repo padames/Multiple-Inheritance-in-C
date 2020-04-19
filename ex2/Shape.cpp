@@ -77,6 +77,10 @@ namespace shape {
         return *this;
     }
 
+    void Shape::setOrigin(const Point& point) {
+        origin_ = Point(point.getX(), point.getY());
+    }
+
     /**
      * returns the object containing the coordinates of the origin
      * of the shape.
@@ -100,7 +104,7 @@ namespace shape {
     /**
      * shows on screen the shape's name ans its coordinates
      */
-    void Shape::display() {
+    void Shape::display() const {
         cout << endl;
         cout << "Shape Name: " << shapeName;
         origin_.display();

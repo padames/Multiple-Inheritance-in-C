@@ -117,4 +117,37 @@ void GraphicsWorld::run() {
     cout << endl;
     cout << "The distance from the cornercut to the circle using the static class function distance is: " << d << endl;
 
+    // using array of Shape pointers
+    Shape * sh[4];
+    sh[0] = &s;
+    sh[1] = &a;
+    sh[2] = &c;
+    sh[3] = &cc;
+
+    sh[0]->display();
+    cout << endl;
+    cout << "The area of " << sh[0]->getName() << " is: " << sh[0]->area() << endl;
+    cout << "The perimeter of " << sh[0]->getName() << " is: " << sh[0]->perimeter() << endl;
+
+    cout << endl;
+    cout << "The area of " << sh[1]->getName() << " is: " << sh[1]->area() << endl;
+    cout << "The perimeter of " << sh[1]->getName() << " is: " << sh[1]->perimeter() << endl;
+
+    cout << endl;
+    cout << "The area of " << sh[2]->getName() << " is: " << sh[2]->area() << endl;
+    cout << "The perimeter of " << sh[2]->getName() << " is: " << sh[2]->perimeter() << endl;
+
+    cout << endl;
+    cout << "The area of " << sh[3]->getName() << " is: " << sh[3]->area() << endl;
+    cout << "The perimeter of " << sh[3]->getName() << " is: " << sh[3]->perimeter() << endl;
+
+    cout << endl;
+    cout << "Testing the copy constructor in class CornerCut" << endl;
+    CornerCut rc(cc);
+    rc.display();
+
+    cout << endl;
+    cout << "Testing the assignment operator in class CornerCut" << endl;
+    CornerCut rc2 = cc;
+    rc2.display();
 }

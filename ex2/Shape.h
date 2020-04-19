@@ -40,9 +40,14 @@ namespace shape {
         Shape &operator=(const Shape &other);
 
         /**
-         * dynamilcally allocates the memory for the name of the shape object
+         * dynamically allocates the memory for the name of the shape object
          */
         void setName(const char *);
+
+        /**
+         * sets an origin for this instance
+         */
+        void setOrigin(const Point&);
 
         /**
          * returns the object containing the coordinates of the origin
@@ -59,10 +64,12 @@ namespace shape {
          */
         char * getName() const;
 
+        virtual double area() const = 0;
+        virtual double perimeter() const = 0;
         /**
          * shows on screen the shape's name ans its coordinates
          */
-        void display();
+        void display() const;
 
         /**
          * member function to compute Euclidean distance to another
